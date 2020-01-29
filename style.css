@@ -1,0 +1,90 @@
+#button {
+    background-color: transparent !important;
+    border: none;
+    color: white !important;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#dropButton {
+    font-size: 16px !important;
+    background-color: transparent !important;
+    border-color: transparent;
+}
+
+#dropdownMenuButton {
+    border-color: transparent;
+    background-color: transparent !important;   
+}
+#para {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+#wins {
+    color: white !important;
+    text-align: center;
+}
+
+#grid {
+    background-color:white;
+    width: 150px;
+    height: 150px;
+    border-color: transparent;
+    font-size: 100px;
+}
+#tl, #tm, #tr {
+    margin-top: 20px;
+}
+#tl, #ml{
+    border-right-style: solid;
+    border-right-color: black;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+#tm, #mm {
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+#tr, #mr {
+    border-left-style: solid;
+    border-left-color: black;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+#bm {
+    border-right-style: solid;
+    border-right-color: black;
+    border-left-style: solid;
+    border-left-color: black;
+}
+#status {
+    text-align: center;
+}
+
+
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:focus {
+    color: white;
+    text-decoration: underline;
+}
