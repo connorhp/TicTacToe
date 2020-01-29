@@ -252,6 +252,7 @@ let app = new Vue({
                     this.compSecond();
                 }
             }
+            else if (this.turns == 9) this.drawnTheGame();
 
         },
 
@@ -265,8 +266,10 @@ let app = new Vue({
             this.board[row][col] = who;
             this.$forceUpdate();
             this.turns++;
-            if (this.turns == 9) this.drawnTheGame();
-            else if (who == this.player) this.computersTurn();
+            if (who == this.player) {
+                if (this.turns == 9) this.drawnTheGame();
+                this.computersTurn();
+            }
             else return true;
         },
 
