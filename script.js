@@ -244,13 +244,9 @@ let app = new Vue({
             else if (!this.canWin(this.player)) {
 
                 //if computer goes first
-                if (this.turns % 2 == 0) {
-                    this.compFirst();
-                }
+                if (this.turns % 2 == 0) this.compFirst();
                 //if player goes first
-                else {
-                    this.compSecond();
-                }
+                else this.compSecond();
             }
             else if (this.turns == 9) this.drawnTheGame();
 
