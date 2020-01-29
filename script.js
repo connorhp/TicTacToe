@@ -69,11 +69,13 @@ let app = new Vue({
         },
         randomEdge() {
             let unused = [];
-            if (this.board[0, 1] == '') unused.push[0, 1];
-            if (this.board[1, 0] == '') unused.push[1, 0];
-            if (this.board[1, 2] == '') unused.push[1, 2];
-            if (this.board[2, 1] == '') unused.push[2, 1];
+            if (this.board[0][1] == '') unused.push([0, 1]);
+            if (this.board[1][0] == '') unused.push([1, 0]);
+            if (this.board[1][2] == '') unused.push([1, 2]);
+            if (this.board[2][1] == '') unused.push([2, 1]);
             let randNum = Math.floor(Math.random() * unused.length);
+            console.log(unused);
+            console.log(unused[randNum]);
             return unused[randNum];
         },
         randomPiece() {
@@ -199,7 +201,7 @@ let app = new Vue({
             let lRow = this.lastMoveRow;
             let lCol = this.lastMoveCol;
             if (this.turns == 1) {
-                if (lRow == lCol) {
+                if (lRow == 1 && lCol == 1) {
                     let corner = this.randomCorner();
                     this.choose(corner[0], corner[1], this.computer)
                 }
@@ -214,7 +216,7 @@ let app = new Vue({
                 }
                 else if ((lRow == 0 || lRow == 2) && (lCol == 0 || lCol == 2)) {
                     let edge = this.randomEdge();
-                    this.choose(edge[0], edge[1], this.computer);
+                    this.choose(edge[0],edge[1],this.computer);
                 }
                 else {
                     if ((this.board[1][0] == this.player || this.board[1][2] == this.player) && lRow != 1) {
