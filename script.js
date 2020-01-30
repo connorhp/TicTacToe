@@ -267,7 +267,5 @@ let app = new Vue({
             this.draw = true;
             this.scores.draws++;
         }
-
     }
-
 });
