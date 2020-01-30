@@ -31,6 +31,7 @@ let app = new Vue({
             this.scores.losses = 0;
             this.scores.draws = 0;
         },
+        
         resetBoard() {
             for (let i = 0; i < this.board.length; ++i) {
                 for (let j = 0; j < this.board[i].length; ++j) {
@@ -40,6 +41,7 @@ let app = new Vue({
             }
             this.turns = 0;
         },
+        
         howToPlay() {
             this.displayBoard = false;
             this.displayHowToPlay = true;
@@ -228,6 +230,7 @@ let app = new Vue({
                 this.choose(piece[0], piece[1], this.computer);
             }
         },
+        
         computersTurn() {
             if (this.canWin(this.computer)) this.lostTheGame();
             else if (!this.canWin(this.player)) {
