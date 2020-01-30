@@ -67,6 +67,7 @@ let app = new Vue({
             let num = Math.floor(Math.random() * unused.length);
             return unused[num];
         },
+        
         randomEdge() {
             let unused = [];
             if (this.board[0][1] == '') unused.push([0, 1]);
@@ -74,10 +75,9 @@ let app = new Vue({
             if (this.board[1][2] == '') unused.push([1, 2]);
             if (this.board[2][1] == '') unused.push([2, 1]);
             let randNum = Math.floor(Math.random() * unused.length);
-            console.log(unused);
-            console.log(unused[randNum]);
             return unused[randNum];
         },
+        
         randomPiece() {
             let unused = [];
             for (let i = 0; i < this.board.length; ++i) {
@@ -90,7 +90,6 @@ let app = new Vue({
         },
 
         canWin(who) {
-            console.log("canWin: " + who);
             //check if there is a winning move on the rows
             for (let i = 0; i < this.board.length; ++i) {
                 let row = -1;
@@ -104,8 +103,6 @@ let app = new Vue({
                     }
                 }
                 if (howMany == 2 && row != -1) {
-                    console.log("Row Win");
-                    console.log("Row: " + row + "Col: " + col);
                     this.choose(row, col, this.computer);
                     return true;
                 }
@@ -123,8 +120,6 @@ let app = new Vue({
                     }
                 }
                 if (howMany == 2 && row != -1) {
-                    console.log("Column win");
-                    console.log("Row: " + row + "Col: " + col);
                     this.choose(row, col, this.computer);
                     return true;
                 }
@@ -138,15 +133,12 @@ let app = new Vue({
                 else if (this.board[i][i] == '') row = col = i;
             }
             if (howMany == 2 && row != -1) {
-                console.log("downDiagonal win");
-                console.log("Row: " + row + "Col: " + col);
                 this.choose(row, col, this.computer);
                 return true;
             }
             //checks 02, 11, 20 winning move
             howMany = 0;
-            row = -1;
-            col = -1;
+            row = col = -1;
             let i = 2;
             let j = 0;
             while (i > -1) {
@@ -159,14 +151,11 @@ let app = new Vue({
                 j++;
             }
             if (howMany == 2 && row != -1) {
-                console.log("Up Diagonal Win");
-                console.log("Row: " + row + "Col: " + col);
                 this.choose(row, col, this.computer);
                 return true;
             }
             return false;
         },
-
 
         compFirst() {
             let lRow = this.lastMoveRow;
@@ -197,6 +186,7 @@ let app = new Vue({
                 this.choose(piece[0], piece[1], this.computer);
             }
         },
+        
         compSecond() {
             let lRow = this.lastMoveRow;
             let lCol = this.lastMoveCol;
@@ -231,7 +221,6 @@ let app = new Vue({
                         let piece = this.randomCorner();
                         this.choose(piece[0],piece[1], this.computer);
                     }
-
                 }
             }
             else {
@@ -242,7 +231,6 @@ let app = new Vue({
         computersTurn() {
             if (this.canWin(this.computer)) this.lostTheGame();
             else if (!this.canWin(this.player)) {
-
                 //if computer goes first
                 if (this.turns % 2 == 0) this.compFirst();
                 //if player goes first
@@ -253,7 +241,6 @@ let app = new Vue({
         },
 
         choose(row, col, who) {
-            console.log("Who: " + who + " Row: " + row + " Col: " + col);
             if (!this.canChoose) return false;
             this.isEmpty = false;
             this.lastMoveRow = row;
@@ -264,7 +251,7 @@ let app = new Vue({
             this.turns++;
             if (who == this.player) {
                 if (this.turns == 9) this.drawnTheGame();
-                this.computersTurn();
+                else this.computersTurn();
             }
             else return true;
         },
