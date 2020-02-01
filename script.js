@@ -31,7 +31,7 @@ let app = new Vue({
             this.scores.losses = 0;
             this.scores.draws = 0;
         },
-        
+
         resetBoard() {
             for (let i = 0; i < this.board.length; ++i) {
                 for (let j = 0; j < this.board[i].length; ++j) {
@@ -41,7 +41,7 @@ let app = new Vue({
             }
             this.turns = 0;
         },
-        
+
         howToPlay() {
             this.displayBoard = false;
             this.displayHowToPlay = true;
@@ -59,6 +59,7 @@ let app = new Vue({
             if (this.computer == 'X') this.computersTurn();
         },
 
+
         randomCorner() {
             let unused = [];
             for (let i = 0; i < this.board.length; i += 2) {
@@ -69,7 +70,7 @@ let app = new Vue({
             let num = Math.floor(Math.random() * unused.length);
             return unused[num];
         },
-        
+
         randomEdge() {
             let unused = [];
             if (this.board[0][1] == '') unused.push([0, 1]);
@@ -79,7 +80,7 @@ let app = new Vue({
             let randNum = Math.floor(Math.random() * unused.length);
             return unused[randNum];
         },
-        
+
         randomPiece() {
             let unused = [];
             for (let i = 0; i < this.board.length; ++i) {
@@ -208,7 +209,7 @@ let app = new Vue({
                 }
                 else if ((lRow == 0 || lRow == 2) && (lCol == 0 || lCol == 2)) {
                     let edge = this.randomEdge();
-                    this.choose(edge[0],edge[1],this.computer);
+                    this.choose(edge[0], edge[1], this.computer);
                 }
                 else {
                     if ((this.board[1][0] == this.player || this.board[1][2] == this.player) && lRow != 1) {
@@ -221,16 +222,16 @@ let app = new Vue({
                     }
                     else {
                         let piece = this.randomCorner();
-                        this.choose(piece[0],piece[1], this.computer);
+                        this.choose(piece[0], piece[1], this.computer);
                     }
                 }
             }
             else {
-                 let piece = this.randomPiece();
+                let piece = this.randomPiece();
                 this.choose(piece[0], piece[1], this.computer);
             }
         },
-        
+
         computersTurn() {
             if (this.canWin(this.computer)) this.lostTheGame();
             else if (!this.canWin(this.player)) {

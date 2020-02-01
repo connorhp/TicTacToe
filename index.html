@@ -10,10 +10,10 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black !important;">
-            <h1 class="navbar-brand" style="color: white !important">Tic Tac Toe</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#c1c1c1 !important;">
+            <h1 class="navbar-brand" style="color: black !important">Tic Tac Toe</h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon" style="color: black !important;"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
@@ -36,37 +36,37 @@
         </nav>
 
         <div v-if="displayBoard">
-            <div class="container">
+            <div id="board" class="container">
                 <div class="row justify-content-md-center">
-                    <div id="tl" class="col col-lg-2">
+                    <div id="tl" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(0, 0, player)">{{board[0][0]}}</button>
                     </div>
-                    <div id="tm" class="col-md-auto">
+                    <div id="tm" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(0, 1, player)">{{board[0][1]}}</button>
                     </div>
-                    <div id="tr" class="col col-lg-2">
+                    <div id="tr" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(0, 2, player)">{{board[0][2]}}</button>
                     </div>
                 </div>
                 <div class="row justify-content-md-center">
-                    <div id="ml" class="col col-lg-2">
+                    <div id="ml" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(1, 0, player)">{{board[1][0]}}</button>
                     </div>
-                    <div id="mm" class="col-md-auto">
+                    <div id="mm" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(1,1, player)">{{board[1][1]}}</button>
                     </div>
-                    <div id="mr" class="col col-lg-2">
+                    <div id="mr" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(1,2, player)">{{board[1][2]}}</button>
                     </div>
                 </div>
                 <div class="row justify-content-md-center">
-                    <div id="bl" class="col col-lg-2">
+                    <div id="bl" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(2,0, player)">{{board[2][0]}}</button>
                     </div>
-                    <div id="bm" class="col-md-auto">
+                    <div id="bm" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(2,1, player)">{{board[2][1]}}</button>
                     </div>
-                    <div id="br" class="col col-lg-2">
+                    <div id="br" class="col-sm col-lg-2">
                         <button id="grid" v-on:click="choose(2,2, player)">{{board[2][2]}}</button>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
         </div>
         <div v-if="displayHowToPlay">
             <h1 id="status">How To Play</h1>
-            <div id="para">
+            <div id="howToPlay">
                 <p>1. The game is played on a grid that's 3 squares by 3 squares.</p>
                 <p>2. You are X if you go first or O if you go second.<br> Players take turns putting their marks in empty squares.</p>
                 <p>3. The first player to get 3 of marks in a row <br> (up, down, across, or diagonally) wins the game.</p>
@@ -90,7 +90,7 @@
 
     <footer>
         <a href="https://github.com/connorhp/TicTacToe">See The Code </a>
-        <p>Connor Pearce 2019 All Rights Reserved
+        <p>Connor Pearce 2020 All Rights Reserved
         </p>
     </footer>
 

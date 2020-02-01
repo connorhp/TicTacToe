@@ -1,69 +1,199 @@
 #button {
     background-color: transparent !important;
     border: none;
-    color: white !important;
     text-align: left;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    color: black;
 }
 
 #dropButton {
     font-size: 16px !important;
     background-color: transparent !important;
     border-color: transparent;
+    color: black;
 }
 
 #dropdownMenuButton {
+    color: black !important;
     border-color: transparent;
-    background-color: transparent !important;   
-}
-#para {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    
+    background-color: transparent !important;
 }
 
-#wins {
-    color: white !important;
-    text-align: center;
+/* phones */
+@media only screen and (max-width: 1000px) {
+
+    #wins {
+        color: black;
+        text-align: center;
+        font-size: 38px;
+    }
+    #howToPlay {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+
+    }
+    #grid {
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        border-color: transparent;
+        font-size: 50px;
+    }
+    #tl,
+    #tm,
+    #tr {
+        margin-top: 100px;
+    }
+    #tl,
+    #ml {
+        border-right-style: solid;
+        border-right-color: black;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #tm,
+    #mm {
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #tr,
+    #mr {
+        border-left-style: solid;
+        border-left-color: black;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #br {
+        border-left-style: solid;
+        
+    }
+    #bl {
+        border-right-style: solid;
+    }
+    #status {
+        text-align: center;
+    }
+    #br, #bm, #bl {
+        margin-bottom: 100px;
+    }
 }
 
-#grid {
-    background-color:white;
-    width: 150px;
-    height: 150px;
-    border-color: transparent;
-    font-size: 100px;
+
+@media only screen and (min-width: 1000px) {
+    #wins {
+        color: black;
+        text-align: center;
+        font-size: 38px;
+    }
+    #howToPlay {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+
+    }
+    #grid {
+        background-color: white;
+        width: 150px;
+        height: 150px;
+        border-color: transparent;
+        font-size: 100px;
+    }
+    #tl,
+    #tm,
+    #tr {
+        margin-top: 20px;
+    }
+    #tl,
+    #ml {
+        border-right-style: solid;
+        border-right-color: black;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #tm,
+    #mm {
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #tr,
+    #mr {
+        border-left-style: solid;
+        border-left-color: black;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #br {
+        border-left-style: solid;
+        
+    }
+    #bl {
+        border-right-style: solid;
+    }
+    #status {
+        text-align: center;
+    }
 }
-#tl, #tm, #tr {
-    margin-top: 20px;
-}
-#tl, #ml{
-    border-right-style: solid;
-    border-right-color: black;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-}
-#tm, #mm {
-    border-bottom-style: solid;
-    border-bottom-color: black;
-}
-#tr, #mr {
-    border-left-style: solid;
-    border-left-color: black;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-}
-#bm {
-    border-right-style: solid;
-    border-right-color: black;
-    border-left-style: solid;
-    border-left-color: black;
-}
-#status {
-    text-align: center;
+
+@media only screen and (min-width: 1600px) {
+    #wins {
+        color: black;
+        text-align: center;
+        font-size: 38px;
+    }
+    #howToPlay {
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+
+    }
+    #grid {
+        background-color: white;
+        width: 150px;
+        height: 150px;
+        border-color: transparent;
+        font-size: 100px;
+    }
+    #tl,
+    #tm,
+    #tr {
+        margin-top: 90px;
+    }
+    #tl,
+    #ml {
+        border-right-style: solid;
+        border-right-color: black;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #tm,
+    #mm {
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #tr,
+    #mr {
+        border-left-style: solid;
+        border-left-color: black;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    #br {
+        border-left-style: solid;
+        
+    }
+    #bl {
+        border-right-style: solid;
+    }
+    #status {
+        margin-top: 30px;
+        text-decoration: underline;
+        font-size: 64px;
+        text-align: center;
+        margin-bottom: 35px;
+    }
 }
 
 footer {
@@ -72,7 +202,7 @@ footer {
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: black;
+    background-color: #0c373d;
     color: white;
 }
 
